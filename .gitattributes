@@ -1,0 +1,35 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Source Code Files (Force LF line endings for cross-platform compatibility)
+*.py text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Configuration & Data Files
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Binary Files (Explicitly tell Git not to modify line endings or content)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.zip binary
+*.tar.gz binary

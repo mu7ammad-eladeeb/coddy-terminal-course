@@ -1,0 +1,18 @@
+# Local & IDE settings
+.vscode/
+.vs/
+tempCodeRunnerFile.*
+
+# Executables & Local Databases
+*.exe
+*.db
+
+# Python cache & build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating system files
+.DS_Store
+Thumbs.db
