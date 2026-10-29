@@ -1396,3 +1396,125 @@ sort -k2 data.txt
 Sorts the lines based on the second column.
 
 **Note:** By default, `sort` does not modify the original file. It only prints the sorted result to the screen.
+
+
+## Unique Command
+
+The `uniq` command filters out consecutive duplicate lines from a file, showing only unique lines.
+
+### Example File
+
+We have a file named `duplicates.txt` containing:
+
+```text
+apple
+banana
+apple
+cherry
+banana
+banana
+```
+
+### Removing Consecutive Duplicates
+
+**Important:** `uniq` only removes duplicates that are next to each other. In the example above, the two consecutive `banana` lines are duplicates, but the two `apple` lines are not consecutive.
+
+This is why `uniq` is almost always used together with `sort` first:
+
+```bash
+sort duplicates.txt | uniq
+```
+
+Output:
+
+```text
+apple
+banana
+cherry
+```
+
+The `sort` command sorts the lines alphabetically, placing identical lines next to each other. Then `uniq` removes the consecutive duplicates.
+
+### Understanding the Pipe (`|`)
+
+The `|` symbol is called a **pipe**. It sends the output of one command as the input to another command.
+
+For example:
+
+```bash
+sort duplicates.txt | uniq
+```
+
+1. `sort duplicates.txt` sorts the contents of the file.
+2. `|` sends the sorted output to the next command.
+3. `uniq` removes consecutive duplicate lines.
+
+This is a powerful pattern you will use often in the terminal.
+
+### Useful Flags
+
+#### 1. `-c` — Count Occurrences
+
+The `-c` flag prefixes each line with the number of times it appears.
+
+```bash
+sort duplicates.txt | uniq -c
+```
+
+Output:
+
+```text
+      2 apple
+      3 banana
+      1 cherry
+```
+
+**Explanation:**
+
+- `apple` appears 2 times.
+- `banana` appears 3 times.
+- `cherry` appears 1 time.
+
+#### 2. `-d` — Show Only Duplicated Lines
+
+The `-d` flag shows only lines that appear more than once consecutively in the input.
+
+```bash
+sort duplicates.txt | uniq -d
+```
+
+Output:
+
+```text
+apple
+banana
+```
+
+Both `apple` and `banana` appear more than once in the file.
+
+#### 3. `-u` — Show Only Unique Occurrences
+
+The `-u` flag shows only lines that appear exactly once in the input.
+
+```bash
+sort duplicates.txt | uniq -u
+```
+
+Output:
+
+```text
+cherry
+```
+
+`cherry` appears only once in the file.
+
+### Key Takeaways
+
+- `uniq` removes consecutive duplicate lines.
+- `sort` is commonly used before `uniq` to group identical lines together.
+- `|` passes the output of one command to another.
+- `uniq -c` counts occurrences of each line.
+- `uniq -d` shows only duplicated lines.
+- `uniq -u` shows only lines that occur once.
+
+**Remember:** `uniq` does not automatically sort the input. Using `sort` first ensures that identical lines are grouped together, allowing `uniq` to process them correctly.
