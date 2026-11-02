@@ -1518,3 +1518,72 @@ cherry
 - `uniq -u` shows only lines that occur once.
 
 **Remember:** `uniq` does not automatically sort the input. Using `sort` first ensures that identical lines are grouped together, allowing `uniq` to process them correctly.
+
+## **Grep Basics**
+
+**`grep`** stands for **Global Regular Expression Print**. It is one of the most powerful and commonly used terminal commands. It searches through files and prints every line that contains a matching pattern.
+
+We have **`server.log`**:
+
+```text
+info: server started
+info: listening on port 8080
+error: disk full
+warning: high memory usage
+info: request received
+error: connection timeout
+info: server shutdown
+```
+
+The basic format is:
+
+```bash
+grep "pattern" filename
+```
+
+For example, to find every line that contains the word **`error`**:
+
+```bash
+grep "error" server.log
+```
+
+Output:
+
+```text
+error: disk full
+error: connection timeout
+```
+
+Only the lines containing **`error`** are printed. All other lines are hidden.
+
+### **Searching in multiple files:**
+
+```bash
+grep "error" *.log   # search all .log files
+```
+
+### **Searching for a phrase with spaces:**
+
+```bash
+grep "connection timeout" server.log
+```
+
+### **Case sensitivity:**
+
+By default, **`grep`** is **case sensitive**. So searching for **`error`** will not match **`Error`** or **`ERROR`**:
+
+```bash
+grep "error" server.log    # matches: error
+grep "Error" server.log    # matches: Error
+grep "ERROR" server.log    # matches: ERROR
+```
+
+### **Brief explanation of important terms:**
+
+- **`grep`:** A command used to search for matching text in files.
+- **Pattern:** The text or regular expression that `grep` searches for.
+- **Filename:** The file in which `grep` searches.
+- **Case sensitive:** Treats uppercase and lowercase letters as different characters.
+- **`*.log`:** A wildcard pattern that matches filenames ending in `.log`.
+- **Quotes (`" "`):** Keep a phrase with spaces together as one search pattern.
+- **Matching line:** A line that contains the specified pattern.
