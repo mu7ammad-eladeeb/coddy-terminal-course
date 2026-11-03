@@ -1587,3 +1587,72 @@ grep "ERROR" server.log    # matches: ERROR
 - **`*.log`:** A wildcard pattern that matches filenames ending in `.log`.
 - **Quotes (`" "`):** Keep a phrase with spaces together as one search pattern.
 - **Matching line:** A line that contains the specified pattern.
+
+
+## **Grep With Flags**
+
+**`grep`** becomes even more powerful when you add **flags** to control how it searches and what it displays.
+
+### **Most useful grep flags:**
+
+**`-i`**: **case insensitive** search. Matches regardless of uppercase or lowercase:
+
+```bash
+grep -i "error" server.log   # matches error, Error, ERROR
+```
+
+**`-n`**: show **line numbers** alongside each matching line:
+
+```bash
+grep -n "error" server.log
+3:error: disk full
+6:error: connection timeout
+```
+
+**`-c`**: show only the **count** of matching lines, not the lines themselves:
+
+```bash
+grep -c "error" server.log
+2
+```
+
+**`-v`**, **invert** the search, show lines that do **not** match the pattern:
+
+```bash
+grep -v "info" server.log
+error: disk full
+warning: high memory usage
+error: connection timeout
+```
+
+**`-r`**: search **recursively** through all files in a directory:
+
+```bash
+grep -r "error" logs/   # search all files inside the logs folder
+```
+
+**`-l`**: show only the **filenames** that contain a match, not the matching lines:
+
+```bash
+grep -l "error" *.log
+```
+
+### **Combining flags:**
+
+You can combine multiple flags together:
+
+```bash
+grep -in "error" server.log   # case insensitive + show line numbers
+grep -vc "info" server.log    # invert + count non-info lines
+```
+
+### **Brief explanation of important terms:**
+
+- **Flag:** An option added to a command to change its behavior.
+- **Case insensitive (`-i`):** Treats uppercase and lowercase letters as equivalent.
+- **Line number (`-n`):** Displays the line's position in the file where the match was found.
+- **Count (`-c`):** Displays the number of matching lines.
+- **Invert (`-v`):** Displays lines that do not contain the specified pattern.
+- **Recursive (`-r`):** Searches through files in a directory and its subdirectories.
+- **Filename (`-l`):** Displays the names of files that contain at least one match.
+- **Combining flags:** Using more than one flag in the same command, such as `-in` for case-insensitive search with line numbers.
