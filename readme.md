@@ -1656,3 +1656,38 @@ grep -vc "info" server.log    # invert + count non-info lines
 - **Recursive (`-r`):** Searches through files in a directory and its subdirectories.
 - **Filename (`-l`):** Displays the names of files that contain at least one match.
 - **Combining flags:** Using more than one flag in the same command, such as `-in` for case-insensitive search with line numbers.
+
+
+## **Standard Output**
+
+Every command in the terminal has three **data streams** connected to it. Understanding these streams is the foundation of redirection: one of the most powerful features of the command line.
+
+The first stream is called **standard output**, often abbreviated as **`stdout`**. This is where commands send their normal results. When you run **`ls`** or **`cat`**, the text you see on screen is coming through standard output.
+
+```bash
+echo "Hello, World!"
+```
+
+The message **`Hello, World!`** is sent to standard output, which by default displays on your terminal screen.
+
+Similarly, when you list files:
+
+```bash
+ls
+```
+
+The list of filenames flows through standard output to your screen.
+
+By default, standard output is connected to your terminal display. But here is where it gets interesting. You can **redirect** this output somewhere else, like into a file. Instead of seeing the results on screen, you can capture them for later use.
+
+In the upcoming lessons, you will learn how to redirect standard output to files, and discover the other two streams: standard input and standard error.
+
+### **Brief explanation of important terms:**
+
+- **Data streams:** Channels used by a command to receive input or send output.
+- **Standard output (`stdout`):** The stream where a command sends its normal results.
+- **Redirection:** Changing where a command's input or output goes.
+- **Terminal:** The interface where you type commands and view their output.
+- **`echo`:** A command that displays text.
+- **`ls`:** A command that lists files and directories.
+- **`cat`:** A command commonly used to display the contents of files.
