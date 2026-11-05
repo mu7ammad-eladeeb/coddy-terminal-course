@@ -195,6 +195,19 @@ In 1964, Louis Pouzin had the idea of using commands somehow like a programming 
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
+## 1971
+
+### **Why `tty` Means Terminal: Legacy of Teletypewriters**
+
+In Unix-like operating systems, `tty` stands for teletypewriter, referencing the mechanical electromechanical teleprinters originally used to interact with early mainframe computers. When Unix was first developed at AT&T Bell Labs around 1969 to 1971, physical teletype machines (such as the Teletype Model 33) served as the primary user input/output interface, printing commands and outputs onto continuous paper rolls. Although physical paper terminals were later replaced by video display terminals and software-based terminal emulators, the `tty` command and naming convention survived as the standard term for terminal devices in modern operating systems.
+
+* **`tty` Command:** A standard Unix/Linux command-line utility that prints the file name of the terminal connected to standard input (e.g., `/dev/pts/0` or `/dev/tty1`).
+* **Teletypewriter (Teletype / TTY):** An electromechanical typewriter used to send and receive typed messages over communication channels, later adapted as the input/output console for early multi-user computer systems.
+* **Terminal Emulator:** A software application (such as GNOME Terminal, Windows Terminal, or xterm) that replicates the functionality of traditional hardware computer terminals within a graphical desktop environment.
+* **Unix:** A portable, multitasking, multi-user operating system developed by Ken Thompson, Dennis Ritchie, and others at Bell Labs, which established foundational conventions for modern computing architectures.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 1978
 
 **The VT100 video terminal**
