@@ -1691,3 +1691,49 @@ In the upcoming lessons, you will learn how to redirect standard output to files
 - **`echo`:** A command that displays text.
 - **`ls`:** A command that lists files and directories.
 - **`cat`:** A command commonly used to display the contents of files.
+
+
+## **Overwrite To A File**
+
+Now that you understand standard output, let's redirect it somewhere useful. The **`>`** operator takes the output of a command and writes it to a file instead of displaying it on screen.
+
+```bash
+echo "Hello" > greeting.txt
+```
+
+This creates a file called **`greeting.txt`** containing the word **`Hello`**. Nothing appears on screen because the output went into the file instead.
+
+You can redirect the output of any command:
+
+```bash
+ls > filelist.txt
+cat names.txt > backup.txt
+date > timestamp.txt
+```
+
+**Warning:** The **`>`** operator **overwrites** the file completely. If the file already exists, its previous contents are erased and replaced with the new output.
+
+```bash
+echo "First line" > notes.txt
+echo "Second line" > notes.txt
+cat notes.txt
+```
+
+Output:
+
+```text
+Second line
+```
+
+The first line is gone because the second command overwrote the entire file. This behavior is powerful but requires caution. You can accidentally lose data if you redirect to an existing file.
+
+### **Brief explanation of important terms:**
+
+- **`>` (redirection operator):** Sends a command's standard output into a file.
+- **Overwrite:** Replaces the existing contents of a file with new content.
+- **`greeting.txt`:** The file receiving the output from the `echo` command.
+- **`echo`:** Displays text, which can be redirected into a file.
+- **`cat`:** Displays the contents of a file.
+- **`ls`:** Lists files and directories.
+- **`date`:** Displays the current date and time.
+- **Standard output (`stdout`):** The stream carrying a command's normal results.
