@@ -1737,3 +1737,45 @@ The first line is gone because the second command overwrote the entire file. Thi
 - **`ls`:** Lists files and directories.
 - **`date`:** Displays the current date and time.
 - **Standard output (`stdout`):** The stream carrying a command's normal results.
+
+
+## **Append To A File**
+
+The **`>`** operator overwrites files, which can be dangerous when you want to keep existing content. The **`>>`** operator solves this by **appending** to a file instead of replacing it.
+
+```bash id="8q2f6s"
+echo "First line" >> notes.txt
+echo "Second line" >> notes.txt
+cat notes.txt
+```
+
+Output:
+
+```text id="6y2b8v"
+First line
+Second line
+```
+
+Both lines are preserved because **`>>`** adds new content at the end of the file. If the file does not exist, it creates a new one, just like **`>`** does.
+
+This is perfect for building log files or collecting output over time:
+
+```bash id="j2n5gk"
+date >> activity.log
+echo "User logged in" >> activity.log
+date >> activity.log
+echo "User logged out" >> activity.log
+```
+
+Each command adds a new line to **`activity.log`** without erasing previous entries. Use **`>`** when you want a fresh start, and **`>>`** when you want to accumulate data.
+
+### **Brief explanation of important terms:**
+
+- **`>>` (append operator):** Adds command output to the end of a file.
+- **Append:** Add new content while preserving the existing content.
+- **`>` (overwrite operator):** Replaces the existing contents of a file.
+- **`notes.txt`:** The file that receives the text from the `echo` commands.
+- **`cat`:** Displays the contents of a file.
+- **`date`:** Displays the current date and time.
+- **`activity.log`:** A log file that collects entries over time.
+- **Log file:** A file used to record events or activities.
