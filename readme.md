@@ -1779,3 +1779,42 @@ Each command adds a new line to **`activity.log`** without erasing previous entr
 - **`date`:** Displays the current date and time.
 - **`activity.log`:** A log file that collects entries over time.
 - **Log file:** A file used to record events or activities.
+
+
+## **Standard Input**
+
+The second data stream is **standard input**, abbreviated as **`stdin`**. While standard output is where commands send their results, standard input is where commands **receive** data.
+
+Many commands can read from a file by taking the filename as an argument:
+
+```bash id="n6k2v4"
+cat notes.txt
+sort names.txt
+```
+
+But you can also redirect a file's contents directly into a command using the **`<`** operator:
+
+```bash id="g4w7p2"
+sort < names.txt
+```
+
+This feeds the contents of **`names.txt`** into the **`sort`** command through standard input. The result is the same as **`sort names.txt`**, but the mechanism is different: the shell opens the file and connects it to standard input, instead of the command opening the file by its name.
+
+You can combine input and output redirection in a single command:
+
+```bash id="b8r3x1"
+sort < names.txt > sorted_names.txt
+```
+
+This reads from **`names.txt`**, sorts the content, and writes the result to **`sorted_names.txt`**. Input redirection becomes especially useful when working with commands that expect data from standard input rather than a filename argument.
+
+### **Brief explanation of important terms:**
+
+- **Standard input (`stdin`):** The stream through which a command receives data.
+- **`<` (input redirection operator):** Redirects a file's contents into a command's standard input.
+- **`sort`:** Arranges lines of text in a specified order.
+- **`cat`:** Displays the contents of a file.
+- **Shell:** The program that interprets commands and handles redirection.
+- **`>` (output redirection operator):** Sends a command's output to a file, overwriting its existing contents.
+- **`sorted_names.txt`:** The file where the sorted output is saved.
+- **Input redirection:** Supplying data to a command through standard input rather than through a filename argument.
