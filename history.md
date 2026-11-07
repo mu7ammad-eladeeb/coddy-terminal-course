@@ -65,6 +65,19 @@ Many companies made their own Unix versions, so a common standard was needed. Th
 
 # Linux and Free Software
 
+# 1983
+
+## **The GNU Project Begins: The Quest for a Free Unix-Like OS**
+
+On September 27, 1983, Richard Stallman announced the GNU Project on the `net.unix-wizards` newsgroup, marking the official inception of the free software movement. The project aimed to create a completely free operating system called GNU (a recursive acronym for "GNU's Not Unix!"). While modeled heavily on the architecture and design of proprietary Unix, GNU was built entirely from scratch to grant users full freedom to run, copy, modify, and redistribute software source code.
+
+* **GNU Project:** A mass-collaborative free software project launched by Richard Stallman to construct a complete Unix-compatible operating system made entirely of free software.
+* **Richard Stallman (RMS):** An American software freedom activist and programmer who founded the GNU Project, authored the GNU General Public License (GPL), and established the Free Software Foundation (FSF).
+* **Free Software:** Software that respects users' freedom and community by granting four essential freedoms: to run, study, modify, and share the software (often summarized as "free as in freedom, not free beer").
+* **Unix:** A proprietary multi-user operating system whose modular architecture served as the design blueprint for GNU tools, shell components, and compiler chains.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
 ## 1991
 
 ### **Just a hobby**
