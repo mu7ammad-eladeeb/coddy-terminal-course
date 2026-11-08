@@ -1818,3 +1818,50 @@ This reads from **`names.txt`**, sorts the content, and writes the result to **`
 - **`>` (output redirection operator):** Sends a command's output to a file, overwriting its existing contents.
 - **`sorted_names.txt`:** The file where the sorted output is saved.
 - **Input redirection:** Supplying data to a command through standard input rather than through a filename argument.
+
+
+## **Standard Error**
+
+The third and final data stream is **standard error**, abbreviated as **`stderr`**. This stream is specifically for error messages and warnings, keeping them separate from normal output.
+
+When a command fails, the error message goes to standard error, not standard output:
+
+```bash id="q4n6v8"
+ls nonexistent_folder
+```
+
+The error message you see comes through stderr. This separation matters because you can redirect errors independently from regular output.
+
+To redirect standard error, use **`2>`** instead of **`>`**:
+
+```bash id="x7m2p5"
+ls nonexistent_folder 2> errors.txt
+```
+
+The **`2`** refers to stderr's file descriptor number (stdout is **`1`**, stderr is **`2`**). This command captures the error message in **`errors.txt`** while keeping your terminal clean.
+
+You can redirect both streams to different files:
+
+```bash id="k8r3t1"
+ls existing_folder nonexistent_folder > output.txt 2> errors.txt
+```
+
+Successful output goes to **`output.txt`**, while any errors go to **`errors.txt`**. To send both streams to the same file, use **`2>&1`**:
+
+```bash id="c9w5f2"
+ls existing_folder nonexistent_folder > all_output.txt 2>&1
+```
+
+This redirects stderr to wherever stdout is going, combining everything into one file.
+
+### **Brief explanation of important terms:**
+
+- **Standard error (`stderr`):** The stream used by a command to send error messages and warnings.
+- **`2>`:** Redirects standard error to a file, overwriting the file if it already exists.
+- **File descriptor:** A number used by the operating system to identify an open input or output stream.
+- **`1`:** The file descriptor for standard output (`stdout`).
+- **`2`:** The file descriptor for standard error (`stderr`).
+- **`output.txt`:** The file where normal output is saved.
+- **`errors.txt`:** The file where error messages are saved.
+- **`2>&1`:** Redirects standard error to the same destination as standard output.
+- **`all_output.txt`:** The file that receives both standard output and standard error.
