@@ -1865,3 +1865,85 @@ This redirects stderr to wherever stdout is going, combining everything into one
 - **`errors.txt`:** The file where error messages are saved.
 - **`2>&1`:** Redirects standard error to the same destination as standard output.
 - **`all_output.txt`:** The file that receives both standard output and standard error.
+
+
+
+## What Is a Pipe?
+
+A **pipe** is a way to send the output of one command directly into another command.
+
+In the terminal, the pipe symbol is:
+
+```bash
+|
+```
+
+It takes the **standard output (`stdout`)** of the command on its left and sends it as the **standard input (`stdin`)** to the command on its right.
+
+**Example**
+
+Suppose you have a file named `names.txt` containing a list of names.
+
+You can use `cat` to display the file's contents and `sort` to sort them alphabetically:
+
+```bash
+cat names.txt | sort
+```
+
+### How does it work?
+
+1. `cat names.txt` reads the file and sends its contents to standard output.
+2. The pipe (`|`) takes that output and sends it to the next command.
+3. `sort` receives the contents as standard input and sorts the names alphabetically.
+4. The sorted result is displayed in the terminal.
+
+The important thing is that the output of the first command becomes the input of the second command without creating an intermediate file.
+
+### Using a Temporary File Instead
+
+You could achieve a similar result by saving the output of the first command in a temporary file:
+
+```bash
+cat names.txt > temp.txt
+sort < temp.txt
+```
+
+Here:
+
+- `>` redirects the output of `cat` into `temp.txt`.
+- `<` redirects the contents of `temp.txt` into `sort`.
+
+However, this approach creates an additional file that you may need to delete afterward:
+
+```bash
+rm temp.txt
+```
+
+Using a pipe avoids the need for this temporary file.
+
+### What Is a Pipeline?
+
+A **pipeline** is a sequence of two or more commands connected using pipes.
+
+For example:
+
+```bash
+cat names.txt | sort | uniq
+```
+
+This command performs three operations:
+
+1. `cat names.txt` reads the file.
+2. `sort` sorts the names alphabetically.
+3. `uniq` removes adjacent duplicate lines.
+
+Each command receives the output of the previous command as its input.
+
+### **Remember:**
+
+- `|` connects commands.
+- The command on the left sends its standard output to the pipe.
+- The command on the right receives that output as standard input.
+- You can connect multiple commands to create a pipeline.
+- Pipes allow you to combine commands without creating temporary files.
+
