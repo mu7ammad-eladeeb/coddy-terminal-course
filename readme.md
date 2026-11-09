@@ -1947,3 +1947,70 @@ Each command receives the output of the previous command as its input.
 - You can connect multiple commands to create a pipeline.
 - Pipes allow you to combine commands without creating temporary files.
 
+
+
+## Chaining Two Commands
+
+Now that you understand what a pipe does, let's see how to use it effectively with two commands.
+
+The key is choosing commands that work well together, where the output of the first command makes sense as input for the second.
+
+**Example 1: Counting Files with `ls` and `wc -l`**
+
+A common pairing is **`ls`** with **`wc -l`** to count directory entries:
+
+```bash
+ls | wc -l
+```
+
+- **`ls`** lists the files and directories in the current directory, typically one entry per line when its output is piped.
+- **`|`** sends the output of `ls` to the next command.
+- **`wc -l`** counts the number of lines it receives.
+
+The result is the number of entries listed in the current directory (including directories, not just regular files).
+
+**Example 2: Previewing a File with `cat` and `head`**
+
+Another useful combination is **`cat`** with **`head`** to preview a file:
+
+```bash
+cat longfile.txt | head -5
+```
+
+This displays only the first **5 lines** of the file.
+
+Here's how it works:
+
+1. `cat longfile.txt` reads the file and sends its contents to standard output.
+2. The pipe (`|`) sends that output to `head`.
+3. `head -5` displays only the first five lines.
+
+You could also use **`head -5 longfile.txt`** directly, since `head` can read a file by itself.
+
+However, piping becomes essential when the first command generates output that isn't simply reading a file.
+
+**Example 3: Displaying Detailed Information with `ls -l` and `head`**
+
+For example, you can combine **`ls -l`** with **`head`**:
+
+```bash
+ls -l | head -3
+```
+
+This displays only the first **3 lines** of the detailed directory listing.
+
+- **`ls -l`** displays detailed information about directory entries, such as permissions, owner, size, and modification date.
+- **`head -3`** displays only the first three lines of that output.
+
+The pipe transforms two simple commands into a more powerful operation by allowing one command's output to become another command's input.
+
+### Important Terms
+
+- **`ls`**: Lists files and directories.
+- **`wc -l`**: Counts the number of lines.
+- **`cat`**: Displays the contents of a file.
+- **`head -5`**: Displays the first five lines.
+- **`head -3`**: Displays the first three lines.
+- **Command chaining**: Connecting commands so they work together.
+- **Pipe (`|`)**: Sends the output of one command to another as input.
+
