@@ -1,4 +1,6 @@
-# What Is The Terminal
+# Introduction
+
+## What Is The Terminal
 
 The **terminal** is a powerful text-based interface that lets you communicate directly with your computer's operating system.
 
@@ -87,6 +89,8 @@ This line starts with `#!` (called a **shebang**) followed by the path to the sh
 
     # TODO: Add error handling here
     echo "Processing files..."
+    
+# Navigation
 
 ## **Print Working Directory**
 
@@ -269,7 +273,7 @@ cd ./documents   # same as: cd documents
 cd ..            # go up one level
 ```
 
-# **Home And Root Directory**
+## **Home And Root Directory**
 
 Two of the most important directories in any Unix-based filesystem are the **root directory** and the **home directory**. Understanding the difference between them is important because they represent two very different locations in the filesystem.
 
@@ -321,6 +325,8 @@ For example, if your username is `username`, the command might output:
 ```bash
 /home/username
 ```
+
+# Files
 
 ## **Create A File**
 
@@ -564,90 +570,7 @@ rm -f readme.txt
 
 > ***Warning:** The terminal has **no recycle bin**. Files deleted with **`rm`** are gone permanently and cannot be recovered. Always double-check before running **`rm`**.*
 
-## **Recap - File Operations**
-
-
-
-### **Challenge**
-
-Easy
-
-Put all your file operation skills together! You must execute the following commands in order to complete the task:
-
-1. Create a new file called **`newfile.txt`** using **`touch`**
-2. Copy **`newfile.txt`** to **`backup.txt`** using **`cp`**
-3. Move **`backup.txt`** into the **`documents`** folder using **`mv`**
-4. Delete **`newfile.txt`** using **`rm`**
-5. List the contents of the current directory using **`ls`**
-6. List the contents of the **`documents`** folder using **`ls documents`**
-
-> ***Note:** The check lists the home directory and the **`documents`** folder itself, so an extra command of your own does not break it.*
-
-#### **Hints**
-
-**Hint 1**
-
-
-
-Step 1: Use **`touch newfile.txt`** to create a new file.
-
-
-
-**Hint 2**
-
-
-
-
-
-Step 2: Use **`cp newfile.txt backup.txt`** to copy it.
-
-
-
-**Hint 3**
-
-
-
-Step 3: Use **`mv backup.txt documents/backup.txt`** to move the copy into the documents folder.
-
-
-
-**Hint 4**
-
-
-
-Step 4: Use **`rm newfile.txt`** to delete the original file.
-
-
-
-**Hint 5**
-
-
-
-Step 5: Use **`ls`** and **`ls documents`** to confirm the final state.
-
-### **Solution**
-
-```bash
-touch newfile.txt
-cp newfile.txt backup.txt
-mv backup.txt documents/backup.txt
-rm newfile.txt
-ls
-ls documents
-```
-
-### **Explanation**
-
-The commands are executed in the required order:
-
-1. **`touch newfile.txt`** creates the new file.
-2. **`cp newfile.txt backup.txt`** creates a copy named `backup.txt`.
-3. **`mv backup.txt documents/backup.txt`** moves the copy into the `documents` folder.
-4. **`rm newfile.txt`** deletes the original file.
-5. **`ls`** displays the contents of the current directory.
-6. **`ls documents`** displays the contents of the `documents` folder and confirms that `backup.txt` is there.
-
-At the end, **`newfile.txt`** is deleted, while **`backup.txt`** exists inside the **`documents`** folder.
+# Directories
 
 ## **Create A Directory**
 
@@ -801,7 +724,9 @@ rm -rf documents
 ```
 
 > ***Warning:** **`rm -rf`** is one of the most powerful and dangerous commands in the terminal. It permanently deletes everything without asking. Always double-check your path before running it. There is no undo.*
+
 # **Wildcards and Patterns**
+
 ## **The Star Wildcard**
 
 A **wildcard** is a special character that acts as a placeholder to match one or more characters in filenames. Wildcards let you work with multiple files at once without typing every name.
@@ -1141,6 +1066,8 @@ ls */*.log
 - `{a,b}` uses brace expansion to generate alternatives; it is not a wildcard itself.
 
 Combining these patterns lets you select files precisely for listing, moving, copying, or deleting.
+
+# File Content
 
 ## Head And Tail
 
@@ -1657,6 +1584,7 @@ grep -vc "info" server.log    # invert + count non-info lines
 - **Filename (`-l`):** Displays the names of files that contain at least one match.
 - **Combining flags:** Using more than one flag in the same command, such as `-in` for case-insensitive search with line numbers.
 
+# Redirection
 
 ## **Standard Output**
 
@@ -1866,7 +1794,7 @@ This redirects stderr to wherever stdout is going, combining everything into one
 - **`2>&1`:** Redirects standard error to the same destination as standard output.
 - **`all_output.txt`:** The file that receives both standard output and standard error.
 
-
+# Piping
 
 ## What Is a Pipe?
 
