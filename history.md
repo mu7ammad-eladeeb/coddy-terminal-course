@@ -2,7 +2,7 @@
 
 ## 1969
 
-**The first three programs**
+### **The first three programs**
 
 In August 1969, Ken Thompson wrote the first key parts of Unix on a PDP-7 at Bell Labs. They were an assembler, an editor called ed and a shell. The rest of the system grew around them.
 
@@ -65,9 +65,9 @@ Many companies made their own Unix versions, so a common standard was needed. Th
 
 # Linux and Free Software
 
-# 1983
+## 1983
 
-## **The GNU Project Begins: The Quest for a Free Unix-Like OS**
+### **The GNU Project Begins: The Quest for a Free Unix-Like OS**
 
 On September 27, 1983, Richard Stallman announced the GNU Project on the `net.unix-wizards` newsgroup, marking the official inception of the free software movement. The project aimed to create a completely free operating system called GNU (a recursive acronym for "GNU's Not Unix!"). While modeled heavily on the architecture and design of proprietary Unix, GNU was built entirely from scratch to grant users full freedom to run, copy, modify, and redistribute software source code.
 
@@ -89,6 +89,19 @@ On August 25, 1991, 21-year-old Linus Torvalds posted to the comp.os.minix newsg
 * **Linux Kernel:** The core monolithic operating system kernel originally written by Linus Torvalds, which manages hardware hardware resources and forms the foundation of Linux-based operating systems.
 * **GNU Project:** A free software, mass-collaboration project launched by Richard Stallman in 1983 aiming to create a complete, Unix-compatible free software operating system.
 * **MINIX:** A Unix-like operating system created by Andrew S. Tanenbaum for educational purposes, which served as the initial inspiration and development platform for Linux.
+
+**Source:** en.wikipedia.org (Added details by Gemini AI)
+
+## 1993
+
+### **Where the Name Debian Comes From: A Personal Blend in Open Source**
+
+On August 16, 1993, Ian Murdock released the official announcement for the Debian Linux Release on the USENET newsgroup `comp.os.linux.development`. The name "Debian" is a portmanteau combining the name of his then-girlfriend (later wife), Deborah Lynn, with his own first name, Ian. Created to be an open, transparent, and high-quality Linux distribution maintained by a community of voluntary developers, Debian grew to become one of the oldest and most influential operating system distributions, eventually serving as the direct upstream foundation for modern Linux platforms like Ubuntu and Linux Mint.
+
+* **Debian:** A non-commercial, community-driven operating system based on the Linux kernel, renowned for its stability, extensive package repository, and strict adherence to free software principles.
+* **Ian Murdock:** An American software engineer who founded the Debian Project and authored the *Debian Manifesto*, which urged Linux developers to create a distribution maintained openly and non-commercially.
+* **Debian Free Software Guidelines (DFSG):** A set of guidelines created by the Debian community to define what constitutes "free software," which later served as the primary blueprint for the Open Source Definition.
+* **Downstream Distributions:** Operating systems (such as Ubuntu, Kali Linux, and Raspberry Pi OS) that build upon Debian's package infrastructure (`.deb` format and `apt` package management) as their underlying core software foundation.
 
 **Source:** en.wikipedia.org (Added details by Gemini AI)
 
@@ -223,7 +236,7 @@ In Unix-like operating systems, `tty` stands for teletypewriter, referencing the
 
 ## 1978
 
-**The VT100 video terminal**
+### **The VT100 video terminal**
 
 DEC introduced the VT100 video terminal in August 1978. It was one of the first terminals to support ANSI escape codes, special sequences that move the cursor and change how text looks. Terminal programs today still understand those codes.
 
