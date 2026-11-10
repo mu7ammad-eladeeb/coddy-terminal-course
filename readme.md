@@ -2014,3 +2014,63 @@ The pipe transforms two simple commands into a more powerful operation by allowi
 - **Command chaining**: Connecting commands so they work together.
 - **Pipe (`|`)**: Sends the output of one command to another as input.
 
+
+
+## Chaining Multiple Commands
+
+You're not limited to connecting just two commands. Pipes can chain as many commands as you need, with each one processing the output of the previous command.
+
+Simply add more **`|`** symbols to extend the pipeline:
+
+```bash
+cat data.txt | sort | head -5
+```
+
+This command performs three operations:
+
+1. `cat data.txt` reads the file and sends its contents to standard output.
+2. `sort` sorts all lines alphabetically.
+3. `head -5` displays only the first 5 lines of the sorted output.
+
+Data flows from left to right through each command in sequence.
+
+**Example 2: Finding Unique Entries**
+
+Here's a practical example that finds unique sorted entries:
+
+```bash
+cat names.txt | sort | uniq
+```
+
+The file contents get sorted first, which groups duplicate lines together. Then **`uniq`** removes consecutive duplicate lines.
+
+**The order matters here:** `uniq` only removes adjacent duplicates, so sorting must come first to ensure identical entries are next to each other.
+
+**Example 3: Counting Unique Entries**
+
+You can add even more stages. To count how many unique names exist:
+
+```bash
+cat names.txt | sort | uniq | wc -l
+```
+
+This pipeline performs four operations:
+
+1. `cat names.txt` reads the file.
+2. `sort` sorts the names alphabetically.
+3. `uniq` removes consecutive duplicate names.
+4. `wc -l` counts the remaining lines.
+
+The result is the number of unique names in the file.
+
+### Important Terms
+
+- **Pipeline**: A sequence of commands connected using pipes.
+- **`sort`**: Sorts lines alphabetically by default.
+- **`uniq`**: Removes consecutive duplicate lines.
+- **`wc -l`**: Counts the number of lines.
+- **Transformation step**: An operation that changes or processes the data as it passes through a pipeline.
+- **Data flow**: The movement of output from one command to the next.
+
+**Remember:** Each pipe adds another transformation step. When building longer pipelines, think about what each command needs as input and what it produces as output. The output format of one command must make sense as input for the next.
+
